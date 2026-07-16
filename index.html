@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RP Digital Marketing</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#1a1a2e;--gold:#f5a623;--green:#00c853;--wa:#25d366;--text:#fff;--muted:#a0a0a0}
+body{font-family:Inter,sans-serif;background:var(--bg);color:var(--text);max-width:480px;margin:0 auto;padding:20px}
+.section{display:none}.section.active{display:block}
+.back-btn{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.1);color:var(--gold);padding:10px 20px;border-radius:12px;font-weight:600;cursor:pointer;margin-bottom:20px;display:inline-flex;gap:8px;align-items:center}
+.hero{text-align:center;padding:30px 0}
+.brand-title{font-size:2.2rem;font-weight:900;color:var(--gold);margin-bottom:20px}
+.hero-card{background:linear-gradient(135deg,#f5a623,#d4800a);border-radius:24px;padding:35px 20px;text-align:center;box-shadow:0 20px 60px rgba(245,166,35,0.3)}
+.badge{width:60px;height:60px;background:#1e88e5;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 15px;font-size:28px;color:#fff;font-weight:bold}
+.hero-card h2{font-size:2.2rem;font-weight:900;color:#1a1a2e}
+.divider{display:flex;align-items:center;gap:10px;justify-content:center;margin:8px 0 18px;color:#1a1a2e;font-weight:700;letter-spacing:5px}
+.divider::before,.divider::after{content:'';width:35px;height:2px;background:#1a1a2e}
+.ribbon{background:#fff;color:#d32f2f;font-weight:800;padding:8px;margin:0 -20px;font-size:1rem}
+.best-service{background:#c62828;color:#fff;font-weight:700;padding:8px 28px;border-radius:4px;display:inline-block;margin-top:10px;font-size:0.9rem}
+.cta-btn{background:linear-gradient(135deg,var(--green),#00b248);color:#fff;border:none;padding:16px 40px;border-radius:50px;font-size:1rem;font-weight:800;text-transform:uppercase;cursor:pointer;width:100%;margin:25px 0 15px}
+.phone{text-align:center;font-size:1.3rem;font-weight:700;color:var(--gold);margin-bottom:8px}
+.tagline{text-align:center;color:var(--muted);font-size:0.85rem;margin-bottom:20px}
+.whatsapp-btn{display:flex;align-items:center;justify-content:center;gap:12px;background:linear-gradient(135deg,var(--wa),#128c7e);color:#fff;text-decoration:none;padding:14px 28px;border-radius:50px;font-weight:700;width:100%;margin-bottom:8px}
+.wa-icon{width:28px;height:28px}
+.wa-text{display:flex;flex-direction:column;align-items:flex-start}
+.wa-text span:first-child{font-size:0.95rem}
+.wa-text span:last-child{font-size:0.75rem;opacity:0.9}
+.wa-label{text-align:center;color:var(--muted);font-size:0.75rem;margin-bottom:20px}
+.card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:25px;margin-bottom:20px}
+.card h2,.card h3{color:var(--gold);font-size:1.4rem;font-weight:800;text-align:center;margin-bottom:15px}
+.card p{color:#e0e0e0;line-height:1.7;font-size:0.9rem;text-align:center}
+.card h3{text-align:left;font-size:1.1rem;margin-top:15px}
+.card ul{margin-left:18px;margin-bottom:12px}
+.card li{color:#e0e0e0;line-height:1.7;font-size:0.88rem;margin-bottom:5px}
+.service-item{background:rgba(255,255,255,0.03);border-left:4px solid var(--gold);border-radius:10px;padding:14px 18px;margin-bottom:10px;font-weight:600;font-size:0.9rem}
+.footer{text-align:center;padding:20px 0 30px}
+.footer-links{display:flex;justify-content:center;gap:12px;margin-bottom:10px;flex-wrap:wrap}
+.footer-links a{color:var(--gold);text-decoration:none;font-size:0.8rem;font-weight:600;cursor:pointer}
+.footer-links span{color:var(--muted)}
+.powered-by,.copyright{color:var(--muted);font-size:0.75rem}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,0.8);display:none;align-items:center;justify-content:center;z-index:100;padding:20px}
+.modal.active{display:flex}
+.modal-box{background:#16213e;border-radius:20px;padding:28px;width:100%;max-width:380px;border:1px solid rgba(255,255,255,0.1)}
+.modal-box h3{color:var(--gold);text-align:center;margin-bottom:18px}
+.modal-box input,.modal-box textarea{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:12px 14px;color:#fff;margin-bottom:10px;font-size:0.9rem}
+.modal-box textarea{min-height:80px;resize:vertical}
+.modal-btns{display:flex;gap:10px;margin-top:8px}
+.modal-btns button{flex:1;padding:12px;border-radius:10px;border:none;font-weight:700;cursor:pointer;font-size:0.9rem}
+.modal-btns .primary{background:var(--gold);color:#1a1a2e}
+.modal-btns .secondary{background:rgba(255,255,255,0.1);color:#fff}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- HOME -->
+<div id="home-section" class="section active">
+<div class="hero">
+<h1 class="brand-title">RP Digital Marketing</h1>
+<div class="hero-card">
+<div class="badge">&#10003;</div>
+<h2>RP DIGITAL</h2>
+<div class="divider"><span>MARKETING</span></div>
+<div class="ribbon">24X7 CUSTOMER SERVICE</div>
+<div class="best-service">BEST SERVICE</div>
+</div>
+</div>
+<button class="cta-btn" onclick="document.getElementById('modal').classList.add('active')">GET FREE CONSULTATION</button>
+<div class="phone">&#128222; +91 95090 22841</div>
+<div class="tagline">SEO &bull; Google Ads &bull; Social Media &bull; Website Development</div>
+<a href="https://wa.me/919509022841?text=Hi%20RP%20Digital%20Marketing%2C%20I%20am%20interested%20in%20your%20services!" target="_blank" class="whatsapp-btn">
+<svg class="wa-icon" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+<div class="wa-text"><span>Chat on WhatsApp</span><span>+91 95090 22841</span></div>
+</a>
+<div class="wa-label">Click to start a conversation instantly</div>
+<div class="card">
+<h3>About RP Digital Marketing</h3>
+<p>RP Digital Marketing is dedicated to delivering prompt customer communication and digital assistance through secure and convenient online channels. Our team focuses on providing timely responses and a smooth support experience for every customer inquiry.</p>
+</div>
+<div class="card">
+<h3>Our Digital Marketing Services</h3>
+<div class="service-item">&#10003; Search Engine Optimization (SEO)</div>
+<div class="service-item">&#10003; Google Ads Management</div>
+<div class="service-item">&#10003; Social Media Marketing</div>
+<div class="service-item">&#10003; Website Design & Development</div>
+<div class="service-item">&#10003; Branding & Online Promotion</div>
+</div>
+<div class="footer">
+<div class="footer-links">
+<a onclick="showSection('privacy')">Privacy Policy</a><span>|</span>
+<a onclick="showSection('terms')">Terms & Conditions</a><span>|</span>
+<a onclick="document.getElementById('modal').classList.add('active')">Contact Us</a>
+</div>
+<p class="powered-by">Powered by Netiquette Technology</p>
+<p class="copyright">&copy; 2026 RP Digital Marketing. All Rights Reserved.</p>
+</div>
+</div>
+<!-- PRIVACY POLICY -->
+<div id="privacy-section" class="section">
+<button class="back-btn" onclick="showSection('home')">&#8592; Back to Home</button>
+<div class="card">
+<h2>Privacy Policy</h2>
+<p>We respect your privacy and are committed to protecting your personal information. Any information you submit through our website or WhatsApp is used only to respond to your inquiries and provide the requested services. We do not sell, rent, or share your personal information with third parties except where required by applicable law.</p>
+<h3>Information We Collect</h3>
+<p>We may collect the following types of information when you use our services:</p>
+<ul>
+<li>Personal details such as your name, phone number, and email address</li>
+<li>Business information related to your digital marketing needs</li>
+<li>Communication records via WhatsApp, email, or contact forms</li>
+<li>Usage data and analytics to improve our website experience</li>
+</ul>
+<h3>How We Use Your Information</h3>
+<p>Your information is used solely for:</p>
+<ul>
+<li>Responding to your inquiries and service requests</li>
+<li>Providing digital marketing services you have requested</li>
+<li>Sending updates about your projects or our services</li>
+<li>Improving our website and customer support</li>
+</ul>
+<h3>Data Security</h3>
+<p>We implement appropriate security measures to protect your personal information from unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the internet is 100% secure, and we cannot guarantee absolute security.</p>
+<h3>Third-Party Services</h3>
+<p>We may use trusted third-party services (such as WhatsApp, Google Analytics, or hosting providers) to operate our business. These services have their own privacy policies, and we encourage you to review them.</p>
+<h3>Your Rights</h3>
+<p>You have the right to access, update, or request deletion of your personal information. To exercise these rights, please contact us via WhatsApp or email.</p>
+<h3>Changes to This Policy</h3>
+<p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated effective date.</p>
+<h3>Contact Us</h3>
+<p>If you have any questions about this Privacy Policy, please contact us at <strong>+91 95090 22841</strong> or via WhatsApp.</p>
+</div>
+</div>
+
+<!-- TERMS & CONDITIONS -->
+<div id="terms-section" class="section">
+<button class="back-btn" onclick="showSection('home')">&#8592; Back to Home</button>
+<div class="card">
+<h2>Terms & Conditions</h2>
+<p>By using this website, you agree to our Terms & Conditions. Please read them carefully before availing of our services.</p>
+<h3>Service Agreement</h3>
+<p>By engaging RP Digital Marketing for any service, you agree to the terms outlined herein. Service availability, pricing, and turnaround times may vary depending on the type of digital marketing or technical support requested.</p>
+<h3>Payments & Refunds</h3>
+<ul>
+<li>All service fees must be paid as per the agreed quotation or invoice</li>
+<li>Advance payment may be required before commencing certain services</li>
+<li>Refund requests will be evaluated on a case-by-case basis</li>
+<li>No refunds will be issued for services already rendered or work in progress</li>
+</ul>
+<h3>Intellectual Property</h3>
+<p>All content, designs, strategies, and materials created by RP Digital Marketing remain our intellectual property until full payment is received. Upon payment, ownership of deliverables will be transferred to the client as agreed.</p>
+<h3>Client Responsibilities</h3>
+<ul>
+<li>Clients must provide accurate and complete information for service delivery</li>
+<li>Timely feedback and approvals are required to avoid project delays</li>
+<li>Clients are responsible for ensuring they have rights to any content they provide</li>
+</ul>
+<h3>Limitation of Liability</h3>
+<p>RP Digital Marketing shall not be liable for any indirect, incidental, or consequential damages arising from the use of our services. Our total liability shall not exceed the amount paid for the specific service in question.</p>
+<h3>Modifications</h3>
+<p>RP Digital Marketing reserves the right to update, modify, or discontinue any service or website content without prior notice. Continued use of our services after changes constitutes acceptance of the updated terms.</p>
+<h3>Governing Law</h3>
+<p>These Terms & Conditions shall be governed by and construed in accordance with the laws of India. Any disputes shall be subject to the exclusive jurisdiction of the courts in the applicable jurisdiction.</p>
+<h3>Contact</h3>
+<p>For any questions regarding these Terms & Conditions, please contact us at <strong>+91 95090 22841</strong>.</p>
+</div>
+</div>
+
+</div>
+
+<!-- MODAL -->
+<div class="modal" id="modal" onclick="if(event.target===this)this.classList.remove('active')">
+<div class="modal-box" onclick="event.stopPropagation()">
+<h3>Get Your Free Consultation</h3>
+<input type="text" placeholder="Your Name" id="nameInput">
+<input type="tel" placeholder="Phone Number" id="phoneInput">
+<input type="email" placeholder="Email Address" id="emailInput">
+<textarea placeholder="Tell us about your project..." id="messageInput"></textarea>
+<div class="modal-btns">
+<button class="secondary" onclick="document.getElementById('modal').classList.remove('active')">Cancel</button>
+<button class="primary" onclick="submitForm()">Submit</button>
+</div>
+</div>
+</div>
+
+<script>
+function showSection(id){
+document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+document.getElementById(id+'-section').classList.add('active');
+window.scrollTo(0,0);
+}
+function submitForm(){
+var name=document.getElementById('nameInput').value;
+var phone=document.getElementById('phoneInput').value;
+if(!name||!phone){alert('Please fill in your name and phone number');return;}
+alert('Thank you! We will contact you shortly.');
+document.getElementById('modal').classList.remove('active');
+document.getElementById('nameInput').value='';
+document.getElementById('phoneInput').value='';
+document.getElementById('emailInput').value='';
+document.getElementById('messageInput').value='';
+}
+</script>
+
+</body>
+</html>
