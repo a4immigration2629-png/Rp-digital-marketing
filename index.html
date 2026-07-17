@@ -1,214 +1,396 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RP Digital Marketing</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#1a1a2e;--gold:#f5a623;--green:#00c853;--wa:#25d366;--text:#fff;--muted:#a0a0a0}
-body{font-family:Inter,sans-serif;background:var(--bg);color:var(--text);max-width:480px;margin:0 auto;padding:20px}
-.section{display:none}.section.active{display:block}
-.back-btn{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.1);color:var(--gold);padding:10px 20px;border-radius:12px;font-weight:600;cursor:pointer;margin-bottom:20px;display:inline-flex;gap:8px;align-items:center}
-.hero{text-align:center;padding:30px 0}
-.brand-title{font-size:2.2rem;font-weight:900;color:var(--gold);margin-bottom:20px}
-.hero-card{background:linear-gradient(135deg,#f5a623,#d4800a);border-radius:24px;padding:35px 20px;text-align:center;box-shadow:0 20px 60px rgba(245,166,35,0.3)}
-.badge{width:60px;height:60px;background:#1e88e5;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 15px;font-size:28px;color:#fff;font-weight:bold}
-.hero-card h2{font-size:2.2rem;font-weight:900;color:#1a1a2e}
-.divider{display:flex;align-items:center;gap:10px;justify-content:center;margin:8px 0 18px;color:#1a1a2e;font-weight:700;letter-spacing:5px}
-.divider::before,.divider::after{content:'';width:35px;height:2px;background:#1a1a2e}
-.ribbon{background:#fff;color:#d32f2f;font-weight:800;padding:8px;margin:0 -20px;font-size:1rem}
-.best-service{background:#c62828;color:#fff;font-weight:700;padding:8px 28px;border-radius:4px;display:inline-block;margin-top:10px;font-size:0.9rem}
-.phone{text-align:center;font-size:1.3rem;font-weight:700;color:var(--gold);margin:25px 0 8px}
-.tagline{text-align:center;color:var(--muted);font-size:0.85rem;margin-bottom:20px}
-.whatsapp-btn{display:flex;align-items:center;justify-content:center;gap:12px;background:linear-gradient(135deg,var(--wa),#128c7e);color:#fff;text-decoration:none;padding:14px 28px;border-radius:50px;font-weight:700;width:100%;margin-bottom:8px}
-.wa-icon{width:28px;height:28px}
-.wa-text{display:flex;flex-direction:column;align-items:flex-start}
-.wa-text span:first-child{font-size:0.95rem}
-.wa-text span:last-child{font-size:0.75rem;opacity:0.9}
-.wa-label{text-align:center;color:var(--muted);font-size:0.75rem;margin-bottom:20px}
-.card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:25px;margin-bottom:20px}
-.card h2,.card h3{color:var(--gold);font-size:1.4rem;font-weight:800;text-align:center;margin-bottom:15px}
-.card p{color:#e0e0e0;line-height:1.7;font-size:0.9rem;text-align:center}
-.card h3{text-align:left;font-size:1.1rem;margin-top:15px}
-.card ul{margin-left:18px;margin-bottom:12px}
-.card li{color:#e0e0e0;line-height:1.7;font-size:0.88rem;margin-bottom:5px}
-.service-item{background:rgba(255,255,255,0.03);border-left:4px solid var(--gold);border-radius:10px;padding:14px 18px;margin-bottom:10px;font-weight:600;font-size:0.9rem}
-.footer{text-align:center;padding:20px 0 30px}
-.footer-links{display:flex;justify-content:center;gap:12px;margin-bottom:10px;flex-wrap:wrap}
-.footer-links a{color:var(--gold);text-decoration:none;font-size:0.8rem;font-weight:600;cursor:pointer}
-.footer-links span{color:var(--muted)}
-.powered-by,.copyright{color:var(--muted);font-size:0.75rem}
-.modal{position:fixed;inset:0;background:rgba(0,0,0,0.8);display:none;align-items:center;justify-content:center;z-index:100;padding:20px}
-.modal.active{display:flex}
-.modal-box{background:#16213e;border-radius:20px;padding:28px;width:100%;max-width:380px;border:1px solid rgba(255,255,255,0.1)}
-.modal-box h3{color:var(--gold);text-align:center;margin-bottom:18px}
-.modal-box input,.modal-box textarea{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:12px 14px;color:#fff;margin-bottom:10px;font-size:0.9rem}
-.modal-box textarea{min-height:80px;resize:vertical}
-.modal-btns{display:flex;gap:10px;margin-top:8px}
-.modal-btns button{flex:1;padding:12px;border-radius:10px;border:none;font-weight:700;cursor:pointer;font-size:0.9rem}
-.modal-btns .primary{background:var(--gold);color:#1a1a2e}
-.modal-btns .secondary{background:rgba(255,255,255,0.1);color:#fff}
-/* Floating WhatsApp Button */
-.float-wa{position:fixed;bottom:20px;right:20px;width:56px;height:56px;background:linear-gradient(135deg,#25d366,#128c7e);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.4);z-index:50;cursor:pointer;transition:transform 0.2s}
-.float-wa:hover{transform:scale(1.1)}
-.float-wa svg{width:30px;height:30px}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RB Digital Marketing</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #000; color: #fff; min-height: 100vh; }
+        .container { max-width: 480px; margin: 0 auto; position: relative; overflow: hidden; }
+
+        /* Floating WhatsApp */
+        .wa-float {
+            position: fixed; bottom: 24px; right: 24px; width: 56px; height: 56px;
+            background: #25D366; border-radius: 50%; display: flex; align-items: center;
+            justify-content: center; box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+            z-index: 1000; text-decoration: none; transition: transform 0.2s;
+        }
+        .wa-float:hover { transform: scale(1.1); }
+
+        /* Hero */
+        .hero { padding: 40px 20px 20px; text-align: center; }
+        .hero h1 { font-size: 32px; font-weight: 800; color: #f59e0b; margin-bottom: 4px; letter-spacing: 1px; }
+
+        .orange-card {
+            background: linear-gradient(135deg, #f59e0b, #d97706); border-radius: 20px;
+            padding: 28px 20px; margin: 20px 0; box-shadow: 0 10px 40px rgba(245,158,11,0.3);
+            position: relative; overflow: hidden;
+        }
+        .check-icon {
+            width: 64px; height: 64px; background: #3b82f6; border-radius: 50%;
+            margin: 0 auto 16px; display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 4px 15px rgba(59,130,246,0.4);
+        }
+        .orange-card h2 { font-size: 28px; font-weight: 900; color: #1e293b; margin: 0; letter-spacing: 2px; }
+        .divider { display: flex; align-items: center; justify-content: center; gap: 12px; margin: 8px 0; }
+        .divider-line { width: 40px; height: 2px; background: #1e293b; }
+        .divider span { font-size: 14px; font-weight: 700; color: #1e293b; letter-spacing: 6px; }
+        .service-banner {
+            background: #fff; margin: 16px -20px 0; padding: 10px 0 4px;
+        }
+        .service-banner span { color: #dc2626; font-weight: 800; font-size: 16px; letter-spacing: 1px; }
+        .trusted-text {
+            background: #fff; margin: 0 -20px; padding: 4px 0 10px;
+        }
+        .trusted-text span { color: #dc2626; font-weight: 900; font-size: 20px; letter-spacing: 1px; }
+        .best-btn {
+            background: #dc2626; color: #fff; border: none; padding: 12px 40px;
+            border-radius: 8px; font-weight: 700; font-size: 16px; cursor: pointer;
+            box-shadow: 0 4px 15px rgba(220,38,38,0.3); margin-top: 12px;
+        }
+
+        .phone-section { margin: 20px 0; }
+        .phone-row { display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 12px; }
+        .phone-row svg { fill: #f59e0b; }
+        .phone-row span { font-size: 22px; font-weight: 700; color: #f59e0b; }
+        .tags { color: #94a3b8; font-size: 13px; }
+
+        .wa-cta {
+            display: flex; align-items: center; justify-content: center; gap: 10px;
+            background: linear-gradient(90deg, #25D366, #128C7E); color: #fff;
+            text-decoration: none; padding: 16px 24px; border-radius: 50px;
+            font-weight: 700; font-size: 18px; margin: 20px 0;
+            box-shadow: 0 6px 20px rgba(37,211,102,0.3); transition: all 0.3s;
+        }
+        .wa-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(37,211,102,0.4); }
+        .wa-cta svg { fill: white; }
+        .cta-sub { color: #64748b; font-size: 12px; margin-top: -8px; }
+
+        /* Sections - Black & Gold Theme */
+        .section { padding: 20px; }
+        .section h3 { color: #f59e0b; font-size: 20px; font-weight: 700; margin-bottom: 16px; text-align: center; }
+        .card {
+            background: #111; border-radius: 16px; padding: 20px;
+            border: 1px solid #333;
+        }
+        .card p { color: #ccc; line-height: 1.7; font-size: 14px; text-align: center; }
+
+        /* Services - Black & Gold */
+        .service-card {
+            background: linear-gradient(90deg, #111, #000); border-radius: 12px;
+            padding: 16px 20px; display: flex; align-items: center; gap: 12px;
+            border-left: 4px solid #f59e0b;
+            box-shadow: 0 4px 15px rgba(245,158,11,0.15);
+            transition: all 0.3s; cursor: pointer; margin-bottom: 12px;
+        }
+        .service-card:hover {
+            transform: translateX(8px);
+            box-shadow: 0 6px 25px rgba(245,158,11,0.3);
+            background: linear-gradient(90deg, #1a1a1a, #000);
+        }
+        .service-icon {
+            width: 28px; height: 28px; background: #f59e0b; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+        }
+        .service-icon svg { fill: white; }
+        .service-card span { font-weight: 600; font-size: 15px; color: #fff; }
+
+        /* Chat Toggle Button (Bottom Left) */
+        .chat-toggle {
+            position: fixed; bottom: 24px; left: 24px; width: 56px; height: 56px;
+            background: #128C7E; border-radius: 50%; display: flex; align-items: center;
+            justify-content: center; box-shadow: 0 4px 20px rgba(18,140,126,0.4);
+            z-index: 1000; text-decoration: none; border: none; cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .chat-toggle:hover { transform: scale(1.1); }
+        .chat-toggle svg { fill: white; }
+
+        /* Chat Overlay */
+        .chat-overlay {
+            position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.7); z-index: 2000; display: none;
+        }
+        .chat-overlay.active { display: block; }
+
+        /* Chat Sidebar (Right Side) - Black Theme */
+        .chat-sidebar {
+            position: fixed; top: 0; right: -100%; width: 100%; max-width: 400px;
+            height: 100vh; background: #000; z-index: 2001;
+            display: flex; flex-direction: column;
+            transition: right 0.3s ease; box-shadow: -5px 0 30px rgba(0,0,0,0.5);
+        }
+        .chat-sidebar.active { right: 0; }
+
+        .chat-header {
+            background: #128C7E; padding: 16px; display: flex;
+            align-items: center; gap: 12px; position: relative;
+        }
+        .chat-close {
+            position: absolute; right: 16px; top: 50%; transform: translateY(-50%);
+            background: none; border: none; color: #fff; font-size: 24px;
+            cursor: pointer; width: 36px; height: 36px; display: flex;
+            align-items: center; justify-content: center; border-radius: 50%;
+            transition: background 0.2s;
+        }
+        .chat-close:hover { background: rgba(255,255,255,0.2); }
+        .chat-avatar {
+            width: 44px; height: 44px; background: #fff; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .chat-avatar svg { fill: #128C7E; }
+        .chat-header .name-row { display: flex; align-items: center; gap: 6px; }
+        .chat-header .name { font-weight: 700; font-size: 16px; }
+        .chat-header .verified {
+            width: 18px; height: 18px; background: #3b82f6; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .chat-header .verified svg { fill: white; width: 12px; height: 12px; }
+        .chat-header .status { font-size: 12px; color: #a7f3d0; }
+
+        .chat-messages {
+            flex: 1; padding: 16px; overflow-y: auto;
+            display: flex; flex-direction: column; gap: 10px; background: #000;
+        }
+        .msg-bot {
+            align-self: flex-start; max-width: 85%; background: #111;
+            border-radius: 12px 12px 12px 2px; padding: 14px; font-size: 13px;
+            line-height: 1.7; color: #e2e8f0; border: 1px solid #333;
+        }
+        .msg-user {
+            align-self: flex-end; max-width: 80%; background: #128C7E;
+            border-radius: 12px 12px 2px 12px; padding: 10px 14px;
+            font-size: 13px; color: #fff; margin-bottom: 4px;
+        }
+        .chat-option {
+            background: #1a1a1a; border: 1px solid #333; color: #fff;
+            padding: 10px 14px; border-radius: 8px; text-align: left;
+            cursor: pointer; font-size: 13px; width: 100%; margin-top: 6px;
+            transition: all 0.2s; display: flex; align-items: center; gap: 8px;
+        }
+        .chat-option:hover { background: #222; border-color: #f59e0b; }
+        .chat-input-area {
+            padding: 12px; background: #111;
+            border-top: 1px solid #333; display: flex; gap: 8px; align-items: center;
+        }
+        .chat-input {
+            flex: 1; background: #000; border: 1px solid #333;
+            border-radius: 24px; padding: 12px 18px; color: #fff;
+            font-size: 14px; outline: none;
+        }
+        .chat-input::placeholder { color: #666; }
+        .chat-send {
+            width: 44px; height: 44px; background: #25D366; border: none;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            cursor: pointer; transition: transform 0.2s; flex-shrink: 0;
+        }
+        .chat-send:hover { transform: scale(1.1); }
+        .chat-send svg { fill: white; }
+
+        /* Bottom WA */
+        .bottom-wa {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: #25D366; color: #fff; text-decoration: none;
+            padding: 14px 32px; border-radius: 50px; font-weight: 700;
+            font-size: 16px; box-shadow: 0 4px 15px rgba(37,211,102,0.3);
+            transition: all 0.3s;
+        }
+        .bottom-wa:hover { transform: translateY(-2px); }
+        .bottom-wa svg { fill: white; }
+
+        /* Footer - Black & Gold */
+        .footer {
+            padding: 24px 20px; text-align: center; border-top: 1px solid #222;
+        }
+        .footer-links {
+            display: flex; justify-content: center; gap: 16px;
+            margin-bottom: 12px; flex-wrap: wrap;
+        }
+        .footer-links a { color: #f59e0b; text-decoration: none; font-size: 13px; font-weight: 600; }
+        .footer-links span { color: #444; }
+        .footer p { color: #888; font-size: 12px; margin: 0; }
+        .footer .copy { color: #555; font-size: 11px; margin: 4px 0 0; }
+
+        .spacer { height: 80px; }
+    </style>
 </head>
 <body>
-<div class="container">
+    <div class="container">
+        <!-- Floating WhatsApp Button -->
+        <a class="wa-float" href="https://wa.me/919509022841?text=Hello%20Sir%20I%20want%20!D" target="_blank">
+            <svg width="28" height="28" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
 
-<!-- HOME -->
-<div id="home-section" class="section active">
-<div class="hero">
-<h1 class="brand-title">RP Digital Marketing</h1>
-<div class="hero-card">
-<div class="badge">&#10003;</div>
-<h2>RP DIGITAL</h2>
-<div class="divider"><span>MARKETING</span></div>
-<div class="ribbon">24X7 CUSTOMER SERVICE</div>
-<div class="best-service">BEST SERVICE</div>
-</div>
-</div>
-<div class="phone">&#128222; +91 95090 22841</div>
-<div class="tagline">SEO &bull; Google Ads &bull; Social Media &bull; Website Development</div>
-<a href="https://wa.me/919509022841?text=Hi%20RP%20Digital%20Marketing%2C%20I%20am%20interested%20in%20your%20services!" target="_blank" class="whatsapp-btn">
-<svg class="wa-icon" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-<div class="wa-text"><span>Get Your ID Now</span></div>
-</a>
-<div class="wa-label">Click to start a conversation instantly</div>
-<div class="card">
-<h3>About RP Digital Marketing</h3>
-<p>RP Digital Marketing is dedicated to delivering prompt customer communication and digital assistance through secure and convenient online channels. Our team focuses on providing timely responses and a smooth support experience for every customer inquiry.</p>
-</div>
-<div class="card">
-<h3>Our Digital Marketing Services</h3>
-<div class="service-item">&#10003; Search Engine Optimization (SEO)</div>
-<div class="service-item">&#10003; Google Ads Management</div>
-<div class="service-item">&#10003; Social Media Marketing</div>
-<div class="service-item">&#10003; Website Design & Development</div>
-<div class="service-item">&#10003; Branding & Online Promotion</div>
-</div>
-<div class="footer">
-<div class="footer-links">
-<a onclick="showSection('privacy')">Privacy Policy</a><span>|</span>
-<a onclick="showSection('terms')">Terms & Conditions</a><span>|</span>
-<a onclick="document.getElementById('modal').classList.add('active')">Contact Us</a>
-</div>
-<p class="powered-by">Powered by Netiquette Technology</p>
-<p class="copyright">&copy; 2026 RP Digital Marketing. All Rights Reserved.</p>
-</div>
-</div>
-<!-- PRIVACY POLICY -->
-<div id="privacy-section" class="section">
-<button class="back-btn" onclick="showSection('home')">&#8592; Back to Home</button>
-<div class="card">
-<h2>Privacy Policy</h2>
-<p>We respect your privacy and are committed to protecting your personal information. Any information you submit through our website or WhatsApp is used only to respond to your inquiries and provide the requested services. We do not sell, rent, or share your personal information with third parties except where required by applicable law.</p>
-<h3>Information We Collect</h3>
-<p>We may collect the following types of information when you use our services:</p>
-<ul>
-<li>Personal details such as your name, phone number, and email address</li>
-<li>Business information related to your digital marketing needs</li>
-<li>Communication records via WhatsApp, email, or contact forms</li>
-<li>Usage data and analytics to improve our website experience</li>
-</ul>
-<h3>How We Use Your Information</h3>
-<p>Your information is used solely for:</p>
-<ul>
-<li>Responding to your inquiries and service requests</li>
-<li>Providing digital marketing services you have requested</li>
-<li>Sending updates about your projects or our services</li>
-<li>Improving our website and customer support</li>
-</ul>
-<h3>Data Security</h3>
-<p>We implement appropriate security measures to protect your personal information from unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the internet is 100% secure, and we cannot guarantee absolute security.</p>
-<h3>Third-Party Services</h3>
-<p>We may use trusted third-party services (such as WhatsApp, Google Analytics, or hosting providers) to operate our business. These services have their own privacy policies, and we encourage you to review them.</p>
-<h3>Your Rights</h3>
-<p>You have the right to access, update, or request deletion of your personal information. To exercise these rights, please contact us via WhatsApp or email.</p>
-<h3>Changes to This Policy</h3>
-<p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated effective date.</p>
-<h3>Contact Us</h3>
-<p>If you have any questions about this Privacy Policy, please contact us at <strong>+91 95090 22841</strong> or via WhatsApp.</p>
-</div>
-</div>
+        <!-- Chat Toggle Button (Bottom Left) -->
+        <button class="chat-toggle" onclick="toggleChat()">
+            <svg width="28" height="28" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+        </button>
 
-<!-- TERMS & CONDITIONS -->
-<div id="terms-section" class="section">
-<button class="back-btn" onclick="showSection('home')">&#8592; Back to Home</button>
-<div class="card">
-<h2>Terms & Conditions</h2>
-<p>By using this website, you agree to our Terms & Conditions. Please read them carefully before availing of our services.</p>
-<h3>Service Agreement</h3>
-<p>By engaging RP Digital Marketing for any service, you agree to the terms outlined herein. Service availability, pricing, and turnaround times may vary depending on the type of digital marketing or technical support requested.</p>
-<h3>Payments & Refunds</h3>
-<ul>
-<li>All service fees must be paid as per the agreed quotation or invoice</li>
-<li>Advance payment may be required before commencing certain services</li>
-<li>Refund requests will be evaluated on a case-by-case basis</li>
-<li>No refunds will be issued for services already rendered or work in progress</li>
-</ul>
-<h3>Intellectual Property</h3>
-<p>All content, designs, strategies, and materials created by RP Digital Marketing remain our intellectual property until full payment is received. Upon payment, ownership of deliverables will be transferred to the client as agreed.</p>
-<h3>Client Responsibilities</h3>
-<ul>
-<li>Clients must provide accurate and complete information for service delivery</li>
-<li>Timely feedback and approvals are required to avoid project delays</li>
-<li>Clients are responsible for ensuring they have rights to any content they provide</li>
-</ul>
-<h3>Limitation of Liability</h3>
-<p>RP Digital Marketing shall not be liable for any indirect, incidental, or consequential damages arising from the use of our services. Our total liability shall not exceed the amount paid for the specific service in question.</p>
-<h3>Modifications</h3>
-<p>RP Digital Marketing reserves the right to update, modify, or discontinue any service or website content without prior notice. Continued use of our services after changes constitutes acceptance of the updated terms.</p>
-<h3>Governing Law</h3>
-<p>These Terms & Conditions shall be governed by and construed in accordance with the laws of India. Any disputes shall be subject to the exclusive jurisdiction of the courts in the applicable jurisdiction.</p>
-<h3>Contact</h3>
-<p>For any questions regarding these Terms & Conditions, please contact us at <strong>+91 95090 22841</strong>.</p>
-</div>
-</div>
+        <!-- Chat Overlay -->
+        <div class="chat-overlay" id="chatOverlay" onclick="toggleChat()"></div>
 
-</div>
+        <!-- Chat Sidebar (Slides from Right) -->
+        <div class="chat-sidebar" id="chatSidebar">
+            <div class="chat-header">
+                <div class="chat-avatar">
+                    <svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                </div>
+                <div>
+                    <div class="name-row">
+                        <span class="name">RB Support</span>
+                        <span class="verified">
+                            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                        </span>
+                    </div>
+                    <div class="status">Online</div>
+                </div>
+                <button class="chat-close" onclick="toggleChat()">&#10005;</button>
+            </div>
 
-<!-- MODAL -->
-<div class="modal" id="modal" onclick="if(event.target===this)this.classList.remove('active')">
-<div class="modal-box" onclick="event.stopPropagation()">
-<h3>Get Your Free Consultation</h3>
-<input type="text" placeholder="Your Name" id="nameInput">
-<input type="tel" placeholder="Phone Number" id="phoneInput">
-<input type="email" placeholder="Email Address" id="emailInput">
-<textarea placeholder="Tell us about your project..." id="messageInput"></textarea>
-<div class="modal-btns">
-<button class="secondary" onclick="document.getElementById('modal').classList.remove('active')">Cancel</button>
-<button class="primary" onclick="submitForm()">Submit</button>
-</div>
-</div>
-</div>
+            <div class="chat-messages" id="chatMessages">
+                <!-- NO PRE-FILLED MESSAGES -->
+            </div>
 
-<!-- Floating WhatsApp Button -->
-<a href="https://wa.me/919509022841?text=Hi%20RP%20Digital%20Marketing%2C%20I%20am%20interested%20in%20your%20services!" target="_blank" class="float-wa">
-<svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-</a>
+            <div class="chat-input-area">
+                <input class="chat-input" id="chatInput" type="text" placeholder="Type a message..." onkeypress="if(event.key==='Enter')sendMessage()">
+                <button class="chat-send" onclick="sendMessage()">
+                    <svg width="20" height="20" viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+                </button>
+            </div>
+        </div>
 
-<script>
-function showSection(id){
-document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
-document.getElementById(id+'-section').classList.add('active');
-window.scrollTo(0,0);
-}
-function submitForm(){
-var name=document.getElementById('nameInput').value;
-var phone=document.getElementById('phoneInput').value;
-if(!name||!phone){alert('Please fill in your name and phone number');return;}
-alert('Thank you! We will contact you shortly.');
-document.getElementById('modal').classList.remove('active');
-document.getElementById('nameInput').value='';
-document.getElementById('phoneInput').value='';
-document.getElementById('emailInput').value='';
-document.getElementById('messageInput').value='';
-}
-</script>
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>RB Digital Marketing</h1>
 
+            <div class="orange-card">
+                <div class="check-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                </div>
+                <h2>RB DIGITAL</h2>
+                <div class="divider">
+                    <div class="divider-line"></div>
+                    <span>MARKETING</span>
+                    <div class="divider-line"></div>
+                </div>
+                <div class="service-banner">
+                    <span>24X7 CUSTOMER SERVICE</span>
+                </div>
+                <div class="trusted-text">
+                    <span>100% Trusted Platform</span>
+                </div>
+                <button class="best-btn">BEST SERVICE</button>
+            </div>
+
+            <div class="phone-section">
+                <div class="phone-row">
+                    <svg width="20" height="20" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                    <span>+91 95090 22841</span>
+                </div>
+                <p class="tags">SEO &bull; Google Ads &bull; Social Media &bull; Website Development</p>
+            </div>
+
+            <a class="wa-cta" href="https://wa.me/919509022841?text=Hello%20Sir%20I%20want%20!D" target="_blank">
+                <svg width="28" height="28" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                Get Your !D
+            </a>
+            <p class="cta-sub">Click to start a conversation instantly</p>
+        </div>
+
+        <!-- About Section -->
+        <div class="section">
+            <h3>About RB Digital Marketing</h3>
+            <div class="card">
+                <p>RB Digital Marketing is dedicated to delivering prompt customer communication and digital assistance through secure and convenient online channels. Our team focuses on providing timely responses and a smooth support experience for every customer inquiry.</p>
+            </div>
+        </div>
+
+        <!-- Services Section -->
+        <div class="section">
+            <h3>Our Digital Marketing Services</h3>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                </div>
+                <span>Search Engine Optimization (SEO)</span>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                </div>
+                <span>Google Ads Management</span>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                </div>
+                <span>Social Media Marketing</span>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                </div>
+                <span>Website Design & Development</span>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                </div>
+                <span>Branding & Online Promotion</span>
+            </div>
+        </div>
+
+        <!-- Bottom WhatsApp Link -->
+        <div class="section" style="text-align:center;">
+            <a class="bottom-wa" href="https://wa.me/919509022841?text=Hello%20Sir%20I%20want%20!D" target="_blank">
+                <svg width="24" height="24" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                Chat on WhatsApp
+            </a>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <span>|</span>
+                <a href="#">Terms & Conditions</a>
+                <span>|</span>
+                <a href="#">Contact Us</a>
+            </div>
+            <p>Powered by Netiquette Technology</p>
+            <p class="copy">&copy; 2026 RB Digital Marketing. All Rights Reserved.</p>
+        </div>
+
+        <div class="spacer"></div>
+    </div>
+
+    <script>
+        function toggleChat() {
+            document.getElementById('chatOverlay').classList.toggle('active');
+            document.getElementById('chatSidebar').classList.toggle('active');
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chatInput');
+            const msg = input.value.trim();
+            if (!msg) return;
+
+            const container = document.getElementById('chatMessages');
+
+            const userDiv = document.createElement('div');
+            userDiv.className = 'msg-user';
+            userDiv.textContent = msg;
+            container.appendChild(userDiv);
+
+            input.value = '';
+            container.scrollTop = container.scrollHeight;
+        }
+    </script>
 </body>
 </html>
-
