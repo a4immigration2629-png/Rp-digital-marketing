@@ -9,7 +9,7 @@
         body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #000; color: #fff; min-height: 100vh; }
         .container { max-width: 480px; margin: 0 auto; position: relative; overflow: hidden; }
 
-        /* Floating WhatsApp */
+        /* Floating WhatsApp - Right Side */
         .wa-float {
             position: fixed; bottom: 24px; right: 24px; width: 56px; height: 56px;
             background: #25D366; border-radius: 50%; display: flex; align-items: center;
@@ -17,6 +17,16 @@
             z-index: 1000; text-decoration: none; transition: transform 0.2s;
         }
         .wa-float:hover { transform: scale(1.1); }
+
+        /* Tawk.to Live Chat - Left Side */
+        .tawk-float {
+            position: fixed; bottom: 24px; left: 24px; width: 56px; height: 56px;
+            background: #03A84E; border-radius: 50%; display: flex; align-items: center;
+            justify-content: center; box-shadow: 0 4px 20px rgba(3,168,78,0.4);
+            z-index: 1000; cursor: pointer; transition: transform 0.2s; border: none;
+        }
+        .tawk-float:hover { transform: scale(1.1); }
+        .tawk-float svg { fill: white; }
 
         /* Hero */
         .hero { padding: 40px 20px 20px; text-align: center; }
@@ -96,98 +106,6 @@
         .service-icon svg { fill: white; }
         .service-card span { font-weight: 600; font-size: 15px; color: #fff; }
 
-        /* Chat Toggle Button (Bottom Left) */
-        .chat-toggle {
-            position: fixed; bottom: 24px; left: 24px; width: 56px; height: 56px;
-            background: #128C7E; border-radius: 50%; display: flex; align-items: center;
-            justify-content: center; box-shadow: 0 4px 20px rgba(18,140,126,0.4);
-            z-index: 1000; text-decoration: none; border: none; cursor: pointer;
-            transition: transform 0.2s;
-        }
-        .chat-toggle:hover { transform: scale(1.1); }
-        .chat-toggle svg { fill: white; }
-
-        /* Chat Overlay */
-        .chat-overlay {
-            position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0,0,0,0.7); z-index: 2000; display: none;
-        }
-        .chat-overlay.active { display: block; }
-
-        /* Chat Sidebar (Right Side) - Black Theme */
-        .chat-sidebar {
-            position: fixed; top: 0; right: -100%; width: 100%; max-width: 400px;
-            height: 100vh; background: #000; z-index: 2001;
-            display: flex; flex-direction: column;
-            transition: right 0.3s ease; box-shadow: -5px 0 30px rgba(0,0,0,0.5);
-        }
-        .chat-sidebar.active { right: 0; }
-
-        .chat-header {
-            background: #128C7E; padding: 16px; display: flex;
-            align-items: center; gap: 12px; position: relative;
-        }
-        .chat-close {
-            position: absolute; right: 16px; top: 50%; transform: translateY(-50%);
-            background: none; border: none; color: #fff; font-size: 24px;
-            cursor: pointer; width: 36px; height: 36px; display: flex;
-            align-items: center; justify-content: center; border-radius: 50%;
-            transition: background 0.2s;
-        }
-        .chat-close:hover { background: rgba(255,255,255,0.2); }
-        .chat-avatar {
-            width: 44px; height: 44px; background: #fff; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-        }
-        .chat-avatar svg { fill: #128C7E; }
-        .chat-header .name-row { display: flex; align-items: center; gap: 6px; }
-        .chat-header .name { font-weight: 700; font-size: 16px; }
-        .chat-header .verified {
-            width: 18px; height: 18px; background: #3b82f6; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-        }
-        .chat-header .verified svg { fill: white; width: 12px; height: 12px; }
-        .chat-header .status { font-size: 12px; color: #a7f3d0; }
-
-        .chat-messages {
-            flex: 1; padding: 16px; overflow-y: auto;
-            display: flex; flex-direction: column; gap: 10px; background: #000;
-        }
-        .msg-bot {
-            align-self: flex-start; max-width: 85%; background: #111;
-            border-radius: 12px 12px 12px 2px; padding: 14px; font-size: 13px;
-            line-height: 1.7; color: #e2e8f0; border: 1px solid #333;
-        }
-        .msg-user {
-            align-self: flex-end; max-width: 80%; background: #128C7E;
-            border-radius: 12px 12px 2px 12px; padding: 10px 14px;
-            font-size: 13px; color: #fff; margin-bottom: 4px;
-        }
-        .chat-option {
-            background: #1a1a1a; border: 1px solid #333; color: #fff;
-            padding: 10px 14px; border-radius: 8px; text-align: left;
-            cursor: pointer; font-size: 13px; width: 100%; margin-top: 6px;
-            transition: all 0.2s; display: flex; align-items: center; gap: 8px;
-        }
-        .chat-option:hover { background: #222; border-color: #f59e0b; }
-        .chat-input-area {
-            padding: 12px; background: #111;
-            border-top: 1px solid #333; display: flex; gap: 8px; align-items: center;
-        }
-        .chat-input {
-            flex: 1; background: #000; border: 1px solid #333;
-            border-radius: 24px; padding: 12px 18px; color: #fff;
-            font-size: 14px; outline: none;
-        }
-        .chat-input::placeholder { color: #666; }
-        .chat-send {
-            width: 44px; height: 44px; background: #25D366; border: none;
-            border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            cursor: pointer; transition: transform 0.2s; flex-shrink: 0;
-        }
-        .chat-send:hover { transform: scale(1.1); }
-        .chat-send svg { fill: white; }
-
         /* Bottom WA */
         .bottom-wa {
             display: inline-flex; align-items: center; gap: 8px;
@@ -217,48 +135,15 @@
 </head>
 <body>
     <div class="container">
-        <!-- Floating WhatsApp Button -->
+        <!-- Floating WhatsApp Button - Right Side -->
         <a class="wa-float" href="https://wa.me/919509022841?text=Hello%20Sir%20I%20want%20!D" target="_blank">
             <svg width="28" height="28" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         </a>
 
-        <!-- Chat Toggle Button (Bottom Left) -->
-        <button class="chat-toggle" onclick="toggleChat()">
+        <!-- Tawk.to Live Chat Button - Left Side -->
+        <button class="tawk-float" onclick="openTawkChat()">
             <svg width="28" height="28" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
         </button>
-
-        <!-- Chat Overlay -->
-        <div class="chat-overlay" id="chatOverlay" onclick="toggleChat()"></div>
-
-        <!-- Chat Sidebar (Slides from Right) -->
-        <div class="chat-sidebar" id="chatSidebar">
-            <div class="chat-header">
-                <div class="chat-avatar">
-                    <svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
-                </div>
-                <div>
-                    <div class="name-row">
-                        <span class="name">RB Support</span>
-                        <span class="verified">
-                            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                        </span>
-                    </div>
-                    <div class="status">Online</div>
-                </div>
-                <button class="chat-close" onclick="toggleChat()">&#10005;</button>
-            </div>
-
-            <div class="chat-messages" id="chatMessages">
-                <!-- NO PRE-FILLED MESSAGES -->
-            </div>
-
-            <div class="chat-input-area">
-                <input class="chat-input" id="chatInput" type="text" placeholder="Type a message..." onkeypress="if(event.key==='Enter')sendMessage()">
-                <button class="chat-send" onclick="sendMessage()">
-                    <svg width="20" height="20" viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
-                </button>
-            </div>
-        </div>
 
         <!-- Hero Section -->
         <div class="hero">
@@ -370,40 +255,30 @@
         <div class="spacer"></div>
     </div>
 
-    <script>
-        function toggleChat() {
-            document.getElementById('chatOverlay').classList.toggle('active');
-            document.getElementById('chatSidebar').classList.toggle('active');
+    <!-- Tawk.to Script -->
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    Tawk_API.onLoad = function(){
+        // Hide default widget, use custom button
+        Tawk_API.hideWidget();
+    };
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/6a5a2237ce67b81d468d3277/1jto1bb4r';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+
+    function openTawkChat() {
+        if (typeof Tawk_API !== 'undefined' && Tawk_API.maximize) {
+            Tawk_API.maximize();
+        } else {
+            // Fallback: open Tawk.to in new tab if widget not loaded yet
+            window.open('https://tawk.to/chat/6a5a2237ce67b81d468d3277/1jto1bb4r', '_blank');
         }
-
-        function sendMessage() {
-            const input = document.getElementById('chatInput');
-            const msg = input.value.trim();
-            if (!msg) return;
-
-            const container = document.getElementById('chatMessages');
-
-            const userDiv = document.createElement('div');
-            userDiv.className = 'msg-user';
-            userDiv.textContent = msg;
-            container.appendChild(userDiv);
-
-            input.value = '';
-            container.scrollTop = container.scrollHeight;
-        }
+    }
     </script>
-    <!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/6a5a2237ce67b81d468d3277/1jto1bb4r';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
 </body>
 </html>
